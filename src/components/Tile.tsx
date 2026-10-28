@@ -53,7 +53,7 @@ export const Tile: React.FC<TileProps> = ({
   return (
     <div
       style={animationStyle}
-      className={`w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 flex items-center justify-center font-bold text-2xl sm:text-3xl uppercase rounded-lg border-2 select-none transition-colors duration-200 ${statusClasses}`}
+      className={`w-[13.5vw] h-[13.5vw] max-w-[60px] max-h-[60px] min-w-[40px] min-h-[40px] flex items-center justify-center font-black text-xl xs:text-2xl sm:text-3xl uppercase rounded-lg border-2 select-none transition-colors duration-200 shrink-0 ${statusClasses}`}
       aria-label={char ? `Буква ${char}, статус: ${status}` : 'Празна клетка'}
     >
       {char}

@@ -62,15 +62,15 @@ export const Keyboard: React.FC<KeyboardProps> = ({
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto px-1 sm:px-2 pb-2 select-none">
+    <div className="w-full max-w-lg mx-auto px-1 sm:px-2 pb-1 select-none overflow-x-hidden touch-manipulation">
       {/* Row 1 */}
-      <div className="flex justify-center gap-1 sm:gap-1.5 mb-1.5">
+      <div className="flex justify-center gap-0.5 xs:gap-1 sm:gap-1.5 mb-1 sm:mb-1.5 w-full">
         {row1.map((char) => (
           <button
             key={char}
             onClick={() => onChar(char)}
             disabled={disabled}
-            className={`h-11 xs:h-12 sm:h-13 flex-1 max-w-[42px] rounded-md font-bold text-sm sm:text-base flex items-center justify-center transition-all active:scale-95 shadow-xs ${getKeyClasses(
+            className={`h-11 sm:h-12 flex-1 min-w-0 rounded-md font-bold text-xs xs:text-sm sm:text-base flex items-center justify-center transition-transform active:scale-90 shadow-xs ${getKeyClasses(
               char
             )}`}
           >
@@ -80,13 +80,13 @@ export const Keyboard: React.FC<KeyboardProps> = ({
       </div>
 
       {/* Row 2 */}
-      <div className="flex justify-center gap-1 sm:gap-1.5 mb-1.5">
+      <div className="flex justify-center gap-0.5 xs:gap-1 sm:gap-1.5 mb-1 sm:mb-1.5 w-full px-1 sm:px-3">
         {row2.map((char) => (
           <button
             key={char}
             onClick={() => onChar(char)}
             disabled={disabled}
-            className={`h-11 xs:h-12 sm:h-13 flex-1 max-w-[44px] rounded-md font-bold text-sm sm:text-base flex items-center justify-center transition-all active:scale-95 shadow-xs ${getKeyClasses(
+            className={`h-11 sm:h-12 flex-1 min-w-0 rounded-md font-bold text-xs xs:text-sm sm:text-base flex items-center justify-center transition-transform active:scale-90 shadow-xs ${getKeyClasses(
               char
             )}`}
           >
@@ -96,15 +96,15 @@ export const Keyboard: React.FC<KeyboardProps> = ({
       </div>
 
       {/* Row 3 with ENTER and BACKSPACE */}
-      <div className="flex justify-center gap-1 sm:gap-1.5">
+      <div className="flex justify-center gap-0.5 xs:gap-1 sm:gap-1.5 w-full">
         <button
           onClick={onEnter}
           disabled={disabled}
           title="Потвърди думата (Enter)"
-          className="h-11 xs:h-12 sm:h-13 px-2 sm:px-3 rounded-md font-bold text-xs sm:text-sm flex items-center justify-center gap-1 bg-slate-300 dark:bg-slate-600 text-slate-800 dark:text-slate-100 hover:bg-slate-400 dark:hover:bg-slate-500 active:scale-95 shadow-xs transition-all shrink-0"
+          className="h-11 sm:h-12 flex-[1.4] min-w-0 rounded-md font-bold text-[11px] sm:text-xs flex items-center justify-center gap-0.5 bg-slate-300 dark:bg-slate-600 text-slate-800 dark:text-slate-100 hover:bg-slate-400 dark:hover:bg-slate-500 active:scale-90 shadow-xs transition-transform"
         >
+          <CornerDownLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
           <span className="hidden xs:inline">ВХОД</span>
-          <CornerDownLeft className="w-4 h-4 xs:hidden" />
         </button>
 
         {row3.map((char) => (
@@ -112,7 +112,7 @@ export const Keyboard: React.FC<KeyboardProps> = ({
             key={char}
             onClick={() => onChar(char)}
             disabled={disabled}
-            className={`h-11 xs:h-12 sm:h-13 flex-1 max-w-[44px] rounded-md font-bold text-sm sm:text-base flex items-center justify-center transition-all active:scale-95 shadow-xs ${getKeyClasses(
+            className={`h-11 sm:h-12 flex-1 min-w-0 rounded-md font-bold text-xs xs:text-sm sm:text-base flex items-center justify-center transition-transform active:scale-90 shadow-xs ${getKeyClasses(
               char
             )}`}
           >
@@ -124,10 +124,10 @@ export const Keyboard: React.FC<KeyboardProps> = ({
           onClick={onDelete}
           disabled={disabled}
           title="Изтрий буква (Backspace)"
-          className="h-11 xs:h-12 sm:h-13 px-2 sm:px-3 rounded-md font-bold text-xs sm:text-sm flex items-center justify-center bg-slate-300 dark:bg-slate-600 text-slate-800 dark:text-slate-100 hover:bg-slate-400 dark:hover:bg-slate-500 active:scale-95 shadow-xs transition-all shrink-0"
+          className="h-11 sm:h-12 flex-[1.4] min-w-0 rounded-md font-bold text-xs flex items-center justify-center bg-slate-300 dark:bg-slate-600 text-slate-800 dark:text-slate-100 hover:bg-slate-400 dark:hover:bg-slate-500 active:scale-90 shadow-xs transition-transform"
           aria-label="Изтрий"
         >
-          <Delete className="w-5 h-5" />
+          <Delete className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
         </button>
       </div>
     </div>

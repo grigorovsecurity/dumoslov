@@ -70,7 +70,7 @@ export const Board: React.FC<BoardProps> = ({
   }
 
   return (
-    <div className="w-full flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-2.5 my-auto py-2 sm:py-4">
+    <div className="w-full max-w-full overflow-hidden flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-2.5 my-auto py-1.5 sm:py-3 px-1">
       {rows}
     </div>
   );
