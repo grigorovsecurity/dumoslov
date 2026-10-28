@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Moon, Sun, Volume2, VolumeX, Eye, Keyboard as KeyboardIcon, ShieldAlert, Sparkles } from 'lucide-react';
+import { X, Moon, Sun, Volume2, VolumeX, Eye, Keyboard as KeyboardIcon, ShieldAlert, Sparkles, Smartphone } from 'lucide-react';
 import { GameSettings, KeyboardLayout } from '../../types/game';
 
 interface SettingsModalProps {
@@ -8,6 +8,7 @@ interface SettingsModalProps {
   settings: GameSettings;
   onUpdateSettings: (newSettings: Partial<GameSettings>) => void;
   onResetStats?: () => void;
+  onOpenInstall?: () => void;
 }
 
 export const SettingsModal: React.FC<SettingsModalProps> = ({
@@ -16,6 +17,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   settings,
   onUpdateSettings,
   onResetStats,
+  onOpenInstall,
 }) => {
   if (!isOpen) return null;
 
@@ -197,6 +199,31 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               />
             </button>
           </div>
+
+          {/* Install as App */}
+          {onOpenInstall && (
+            <div className="pt-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                  <Smartphone className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-slate-900 dark:text-white">Инсталирай на телефон</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">iOS (iPhone) & Android приложение</div>
+                </div>
+              </div>
+
+              <button
+                onClick={() => {
+                  onClose();
+                  onOpenInstall();
+                }}
+                className="py-1.5 px-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg transition-all active:scale-95 shadow-xs"
+              >
+                Инструкции
+              </button>
+            </div>
+          )}
         </div>
 
         {onResetStats && (

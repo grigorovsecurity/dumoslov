@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="greenTile" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="amberTile" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)" />
+  <rect x="2" y="2" width="508" height="508" rx="110" fill="none" stroke="#334155" stroke-width="4" stroke-opacity="0.6" />
+
+  <!-- Tile 1 (Green Д) -->
+  <g filter="url(#shadow)">
+    <rect x="76" y="146" width="160" height="160" rx="24" fill="url(#greenTile)" />
+    <rect x="76" y="146" width="160" height="160" rx="24" fill="none" stroke="#34d399" stroke-width="3" stroke-opacity="0.5" />
+    <text x="156" y="262" font-family="system-ui, -apple-system, sans-serif" font-size="108" font-weight="900" fill="#ffffff" text-anchor="middle">Д</text>
+  </g>
+
+  <!-- Tile 2 (Amber У) -->
+  <g filter="url(#shadow)">
+    <rect x="276" y="146" width="160" height="160" rx="24" fill="url(#amberTile)" />
+    <rect x="276" y="146" width="160" height="160" rx="24" fill="none" stroke="#fbbf24" stroke-width="3" stroke-opacity="0.5" />
+    <text x="356" y="262" font-family="system-ui, -apple-system, sans-serif" font-size="108" font-weight="900" fill="#ffffff" text-anchor="middle">У</text>
+  </g>
+
+  <!-- Title Bottom -->
+  <text x="256" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#f8fafc" letter-spacing="6" text-anchor="middle">ДУМОСЛОВ</text>
+  <text x="256" y="420" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#10b981" letter-spacing="2" text-anchor="middle">5 ОПИТА · WORDLE BG</text>
+</svg>

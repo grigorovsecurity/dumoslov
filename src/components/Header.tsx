@@ -1,6 +1,7 @@
 import React from 'react';
 import { GameMode } from '../types/game';
 import { HelpCircle, BarChart3, Settings as SettingsIcon, RotateCw, Calendar, Sparkles } from 'lucide-react';
+import { PWAInstallButton } from './PWAInstallButton';
 
 interface HeaderProps {
   mode: GameMode;
@@ -10,6 +11,7 @@ interface HeaderProps {
   onOpenHelp: () => void;
   onOpenStats: () => void;
   onOpenSettings: () => void;
+  onOpenInstall: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -20,6 +22,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenHelp,
   onOpenStats,
   onOpenSettings,
+  onOpenInstall,
 }) => {
   return (
     <header className="w-full max-w-2xl mx-auto px-4 py-3 border-b border-slate-200 dark:border-slate-800/80 flex items-center justify-between gap-2 sm:gap-4 select-none">
@@ -72,6 +75,8 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Zone 3: Actions */}
       <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+        <PWAInstallButton onOpenModal={onOpenInstall} />
+
         <button
           onClick={onNewGame}
           title="Нова произволна дума"

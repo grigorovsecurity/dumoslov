@@ -8,6 +8,7 @@ import { HelpModal } from './components/Modals/HelpModal';
 import { StatsModal } from './components/Modals/StatsModal';
 import { SettingsModal } from './components/Modals/SettingsModal';
 import { GameOverModal } from './components/Modals/GameOverModal';
+import { InstallAppModal } from './components/Modals/InstallAppModal';
 import {
   GameMode,
   GameSettings,
@@ -87,6 +88,7 @@ export default function App() {
   const [isStatsOpen, setIsStatsOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isGameOverOpen, setIsGameOverOpen] = useState(false);
+  const [isInstallOpen, setIsInstallOpen] = useState(false);
 
   // Session history of played words to avoid repeats in unlimited mode
   const [playedWordsSet, setPlayedWordsSet] = useState<Set<string>>(new Set());
@@ -479,6 +481,7 @@ export default function App() {
         onOpenHelp={() => setIsHelpOpen(true)}
         onOpenStats={() => setIsStatsOpen(true)}
         onOpenSettings={() => setIsSettingsOpen(true)}
+        onOpenInstall={() => setIsInstallOpen(true)}
       />
 
       {/* Main Game Arena */}
@@ -538,6 +541,7 @@ export default function App() {
         settings={settings}
         onUpdateSettings={(newVals) => setSettings((prev) => ({ ...prev, ...newVals }))}
         onResetStats={handleResetStats}
+        onOpenInstall={() => setIsInstallOpen(true)}
       />
 
       <GameOverModal
@@ -551,6 +555,11 @@ export default function App() {
         currentStreak={stats.currentStreak}
         onShare={handleShare}
         onPlayAgain={() => startNewGame('UNLIMITED')}
+      />
+
+      <InstallAppModal
+        isOpen={isInstallOpen}
+        onClose={() => setIsInstallOpen(false)}
       />
     </div>
   );

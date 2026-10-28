@@ -1,0 +1,8 @@
+{
+  "appId": "com.dumoslov.wordle",
+  "appName": "Думослов",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
