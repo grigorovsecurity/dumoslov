@@ -42,21 +42,21 @@
   }
 }
 
-/* Mobile Safe Areas and Native Feel */
+/* Mobile Safe Areas and Native Feel with comfortable margins */
 .pb-safe {
-  padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(max(1rem, env(safe-area-inset-bottom, 0px)) + 0.75rem);
 }
 
 .pt-safe {
-  padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
+  padding-top: calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 0.5rem);
 }
 
 .pl-safe {
-  padding-left: max(0.5rem, env(safe-area-inset-left, 0px));
+  padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
 }
 
 .pr-safe {
-  padding-right: max(0.5rem, env(safe-area-inset-right, 0px));
+  padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
 }
 
 @keyframes pop-letter {

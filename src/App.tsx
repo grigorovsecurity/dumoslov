@@ -469,7 +469,7 @@ export default function App() {
   }, [showToast]);
 
   return (
-    <div className="h-[100dvh] max-h-[100dvh] w-full max-w-[100vw] overflow-x-hidden flex flex-col justify-between bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-200 pb-safe select-none">
+    <div className="h-[100dvh] max-h-[100dvh] w-full max-w-[100vw] overflow-x-hidden flex flex-col justify-between bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-200 pt-safe pb-safe select-none">
       <Toast message={toastMessage} />
 
       {/* Header */}
@@ -485,7 +485,7 @@ export default function App() {
       />
 
       {/* Main Game Arena */}
-      <main className="flex-1 flex flex-col items-center justify-center px-1 sm:px-2 max-w-lg mx-auto w-full overflow-hidden">
+      <main className="flex-1 flex flex-col items-center justify-center px-1 sm:px-2 max-w-lg mx-auto w-full overflow-hidden my-auto">
         {/* Word Board (5 rows x 5 columns) */}
         <Board
           guesses={guesses}
@@ -499,7 +499,7 @@ export default function App() {
       </main>
 
       {/* Virtual Bulgarian Keyboard */}
-      <footer className="w-full shrink-0 max-w-full overflow-hidden">
+      <footer className="w-full shrink-0 max-w-full overflow-hidden px-1 sm:px-2 mb-1 sm:mb-2">
         <Keyboard
           onChar={handleChar}
           onEnter={handleEnter}
@@ -511,7 +511,7 @@ export default function App() {
         />
 
         {/* Clean footer indicator */}
-        <div className="text-center py-1 sm:py-1.5 text-[10px] sm:text-[11px] text-slate-400 dark:text-slate-500 font-medium tracking-tight">
+        <div className="text-center pt-1 pb-1 sm:pt-1.5 sm:pb-1 text-[10px] sm:text-[11px] text-slate-400 dark:text-slate-500 font-medium tracking-tight">
           {mode === 'UNLIMITED' ? (
             <span>Неограничени игри · 5 опита · Български речник</span>
           ) : (
