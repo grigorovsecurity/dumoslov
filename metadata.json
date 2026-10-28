@@ -1,0 +1,6 @@
+{
+  "name": "Думослов - Българският Wordle",
+  "description": "Професионална игра на думи на български език с 5 опита, автентичен речник и неограничени игри.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
